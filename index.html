@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Forecast Application</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body id="body"
+      class="min-h-screen bg-cover bg-center bg-no-repeat text-white">
+
+  
+
+  <!-- Header -->
+  <header class="text-center py-8">
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold">
+      Weather Forecast Application
+    </h1>
+    <p class="mt-2 text-sm md:text-base">
+      Search weather by city name or use your current location.
+    </p>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4">
+
+  <div class="relative rounded-xl shadow-lg p-6 overflow-hidden">
+
+  <!-- Background Image -->
+  <div class="absolute inset-0 bg-cover bg-center"
+       style="background-image: url('img.jpg');">
+  </div>
+
+  <!-- White Overlay -->
+  <div class="absolute inset-0 bg-white opacity-0"></div>
+
+  <!-- Content Wrapper -->
+  <div class="relative z-10 text-black">
+
+    <div class="flex flex-col md:flex-row gap-4">
+        <input 
+          type="text" 
+          id="cityInput"
+          placeholder="Enter city name"
+          class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+
+        <button 
+          id="searchBtn"
+          class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg"
+        >
+          Search
+        </button>
+
+        <button 
+          id="locationBtn"
+          class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg"
+        >
+          Use My Location
+        </button>
+      </div>
+
+      <!-- Recent Cities -->
+      <div id="recentContainer" class="mt-4 hidden">
+        <label class="text-sm font-semibold">Recently Searched:</label>
+        <select 
+          id="recentCities"
+          class="mt-1 w-full px-4 py-2 border rounded-lg"
+        ></select>
+      </div>
+
+      <!-- Error Message -->
+      <div 
+        id="errorMessage" 
+        class="mt-4 hidden bg-red-100 text-red-700 px-4 py-2 rounded-lg"
+      ></div>
+
+  </div>
+
+</div>
+      
+
+    </div>
+
+    <!-- Current Weather -->
+    <div id="currentWeather" class="mt-8 hidden bg-white text-black rounded-xl shadow-lg p-6"></div>
+
+    <!-- Forecast -->
+    <div id="forecastSection" class="mt-8 hidden">
+      <h2 class="text-2xl font-semibold mb-4">5-Day Forecast</h2>
+      <div id="forecastContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"></div>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</div>
+</body>
+</html>
